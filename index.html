@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Crud System</title>
+  </head>
+  <body class="bg-light">
+    <section>
+      <div class="container">
+        <div class="m-auto shadow-lg p-5 my-5 bg-secondary rounded-2">
+          <h3 class="text-center fw-bold text-uppercase">crud system</h3>
+          <div class="row">
+            <div class="row g-3">
+              <div class="col">
+                <input
+                  onblur="isNameValid()"
+                  type="text"
+                  class="form-control"
+                  placeholder="productName: "
+                  aria-label="productName"
+                  id="productName"
+                />
+                <p class="nameAlert d-none alert alert-danger mt-2">
+                  Enter Valid Name Start With Capital letter
+                </p>
+              </div>
+
+              <div class="col">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="productCategory:"
+                  aria-label="Last name"
+                  id="productCategory"
+                />
+              </div>
+            </div>
+            <div class="row g-3 mb-3">
+              <div class="col">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="productPrice:"
+                  aria-label="productPrice"
+                  id="productPrice"
+                />
+              </div>
+              <div class="col">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="productDescription:"
+                  aria-label="productDescription"
+                  id="productdescription"
+                />
+              </div>
+            </div>
+          </div>
+
+          <button
+            class="btn btn-primary"
+            id="add_product"
+            onclick="createProduct()"
+          >
+            Add Product
+          </button>
+          <button class="btn btn-danger">Reset</button>
+        </div>
+      </div>
+    </section>
+
+    <input
+      type="text"
+      onkeyup="searchProd()"
+      placeholder="search"
+      id="searchproduct"
+      class="form-control w-50 m-auto border-black"
+    />
+
+    <div class="w-75 m-auto my-5 shadow-lg">
+      <table class="table">
+        <thead>
+          <th>index</th>
+          <th>name</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Description</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
